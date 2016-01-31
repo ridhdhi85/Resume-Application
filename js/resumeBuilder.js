@@ -6,41 +6,46 @@ var bio = {
 		"email": "Ridhdhi2285@gmail.com",
 		"github": "ridhdhi85",
 		"twitter": "#RidhdhiP",
+		"linkedin": "https://www.linkedin.com/in/riddhipatel",
 		"location": "Oklahoma City",
 	},
-	"bioURL": "images/fry.jpg",
-	"welcomeMessage": "I am working as sr sofware engineer in Test and i am learning web-development to switch my career to development",
+	"bioURL": "images/pic.jpg",
+	"welcomeMessage": "I am working as SR Sofware engineer in Test and i am learning web-development to switch my career to development",
 	"skills": [
-	"Programming", "Reading", "Learning new technologies"
+		"Java", "Javascript", "Groovy", "web-development", "automation", "selenium", "Agile Methodologies", "Scrum", "Web services"
 	]
 };
 
 var work = {
-	"jobs": [
-		{
+	"jobs": [{
 			"employer": "Netsuite inc",
 			"title": "Sr Software engineer in Test",
 			"location": "Oklahoma City, Oklahoma",
 			"dateWorked": "Feb 2015 - current",
-			"description": "Working as SET on Javascript, java and automation using seleniu/java"
+			"description": "Working as SET on Javascript, java and automation using selenium/java."
 		},
 		{
 			"employer": "Truecar inc",
 			"title": "Test automation engineer",
 			"location": "Los angeles, California",
 			"dateWorked": "May 2012 - Feb 2015",
-			"description": "Worked on Python automation development"
-		}
-	]
+			"description": "Worked on Python automation framework development"
+		},
+		{
+			"employer": "Yahoo inc",
+			"title": "Tech Yahoo Software Quality Engineer",
+			"location": "Carlsbad, California",
+			"dateWorked": "OCT 2011 - May 2012",
+			"description": "Worked on Display advertising Platform Team as Quality Engineer."
+	}]
 };
 
 var educations = {
-	"schools": [
-		{
+	"schools": [{
 			"name": "Sanjose State University",
 			"location": "Sanjose, California",
 			"degree": "Master in Software engineering",
-			"majors": ["Software engineering", "Java"],
+			"majors": ["Software engineering"],
 			"yearGraduated": "Dec 2008",
 			"url": "http://www.sjsu.edu"
 		},
@@ -48,13 +53,11 @@ var educations = {
 			"name": "North gujarat University",
 			"location": "India",
 			"degree": "Bachelor in Computer engineering",
-			"majors": ["Computer engineering", "c/c++"],
+			"majors": ["Computer engineering"],
 			"yearGraduated": "May 2006",
 			"url": "http://www.ngu.ac.in"
-		}
-	],
-	"onlineCourse": [
-		{
+	}],
+	"onlineCourse": [{
 			"title": "Front-end Web development",
 			"school": "Udacity",
 			"dates": "2015-2016",
@@ -65,25 +68,22 @@ var educations = {
 			"school": "Edx",
 			"dates": "2012",
 			"url": "https://www.edx.org"
-		}
-	]
+	}]
 };
 
 var projects = {
-	"projects": [
-		{
+	"projects": [{
 			"title": "Online portfolio project",
 			"dates": "Jan 2016",
-			"description": "Using HTML and CSS testiofnkljfdbhkjfgnhklfgnhkjnfdhkdfjnhlfdhnfgklhnfglkhnfglkhnfglkhfgnhlkfgnhl",
-			"images": ["images/fry.jpg", "images/fry.jpg"]
+			"description": "Using HTML and CSS and Bootstrap",
+			"images": ["images/portfolio.jpg", "images/fry.jpg"]
 		},
 		{
 			"title": "Online Resume project",
 			"dates": "Jan 2016",
-			"description": "Using Javascript sd gdfhfg hgfjhgjhjhgjghjghjghjghjhgjhgjgjghjhgjghjhgj",
+			"description": "Using Javascript, CSS, Html and Polymer",
 			"images": ["images/fry.jpg", "images/fry.jpg"]
-		}
-	]
+	}]
 };
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
@@ -106,36 +106,45 @@ if (bio["skills"].length > 0) {
 
 var formattedMobile =  HTMLmobile.replace("%data%", bio.contacts.mobile);
 $("#topContacts").append(formattedMobile);
+$("#footerContacts").append(formattedMobile);
 
 var formattedEmail =  HTMLemail.replace("%data%", bio.contacts.email);
 $("#topContacts").append(formattedEmail);
+$("#footerContacts").append(formattedEmail);
 
 var formattedGitHub =  HTMLgithub.replace("%data%", bio.contacts.github);
 $("#topContacts").append(formattedGitHub);
+$("#footerContacts").append(formattedGitHub);
 
 var formattedTwitter =  HTMLtwitter.replace("%data%", bio.contacts.twitter);
 $("#topContacts").append(formattedTwitter);
+$("#footerContacts").append(formattedTwitter);
 
 var formattedLocation =  HTMLlocation.replace("%data%", bio.contacts.location);
 $("#topContacts").append(formattedLocation);
+$("#footerContacts").append(formattedLocation);
 
-function displayWork()
-{
-	for (var job in work["jobs"])
-	{
+work.display = function() {
+
+	for (var job = 0; job < work["jobs"].length; job++) {
+
 		$("#workExperience").append(HTMLworkStart);
 		var formattedEmployer = HTMLworkEmployer.replace("%data%", work["jobs"][job].employer);
 		var formattedTitle =  HTMLworkTitle.replace("%data%", work["jobs"][job].title);
+		$(".work-entry:last").append(formattedEmployer + formattedTitle);
+
 		var formattedDate =  HTMLworkDates.replace("%data%", work["jobs"][job].dateWorked);
+		$(".work-entry:last").append(formattedDate);
+
 		var formattedDescription =  HTMLworkDescription.replace("%data%", work["jobs"][job].description);
-		$(".work-entry:last").append(formattedEmployer + formattedTitle + formattedDate + formattedDescription);
+		$(".work-entry:last").append(formattedDescription);
 	}
 }
 
-displayWork();
+work.display();
 
 projects.display = function() {
-	for (var project in projects["projects"]) {
+	for (var project = 0; project < projects["projects"].length; project++) {
 		$("#projects").append(HTMLprojectStart);
 
 		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
@@ -148,7 +157,7 @@ projects.display = function() {
 		$(".project-entry:last").append(formattedDescription);
 
 		if (projects.projects[project].images.length > 0) {
-			for (image in projects.projects[project].images) {
+			for (var image = 0; image < projects.projects[project].images.length; image++) {
 				var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
 
 				$(".project-entry:last").append(formattedImage);
@@ -160,17 +169,15 @@ projects.display = function() {
 projects.display();
 
 educations.display = function() {
-	for (var education in educations["schools"]) {
+	for (var education = 0; education < educations["schools"].length; education++) {
 		$("#education").append(HTMLschoolStart);
 
 		var formattedName = HTMLschoolName.replace("%data%", educations["schools"][education].name);
-		$(".education-entry:last").append(formattedName);
+		var formattedDegree = HTMLschoolDegree.replace("%data%", educations["schools"][education].degree);
+		$(".education-entry:last").append(formattedName + formattedDegree);
 
 		var formattedLocation = HTMLschoolLocation.replace("%data%", educations["schools"][education].location);
 		$(".education-entry:last").append(formattedLocation);
-
-		var formattedDegree = HTMLschoolDegree.replace("%data%", educations["schools"][education].degree);
-		$(".education-entry:last").append(formattedDegree);
 
 		var formattedYearsGraduated = HTMLschoolDates.replace("%data%", educations["schools"][education].yearGraduated);
 		$(".education-entry:last").append(formattedYearsGraduated);
@@ -179,7 +186,7 @@ educations.display = function() {
 		// $(".education-entry:last").append(formattedUrl);
 
 		if (educations["schools"][education].majors.length > 0) {
-			for (major in educations["schools"][education].majors) {
+			for (var major = 0; major < educations["schools"][education].majors.length; major++) {
 				var formattedMajor = HTMLschoolMajor.replace("%data%", educations["schools"][education].majors[major]);
 
 				$(".education-entry:last").append(formattedMajor);
@@ -190,12 +197,11 @@ educations.display = function() {
 	if (educations["onlineCourse"].length > 0) {
 		$(".education-entry:last").append(HTMLonlineClasses);
 
-		for (onlineCourse in educations["onlineCourse"]) {
-			var formattedTitle = HTMLonlineTitle.replace("%data%", educations["onlineCourse"][onlineCourse].title);
-			$(".education-entry:last").append(formattedTitle);
+		for (var onlineCourse = 0; onlineCourse < educations["onlineCourse"].length; onlineCourse++) {
 
+			var formattedTitle = HTMLonlineTitle.replace("%data%", educations["onlineCourse"][onlineCourse].title);
 			var formattedSchool = HTMLonlineSchool.replace("%data%", educations["onlineCourse"][onlineCourse].school);
-			$(".education-entry:last").append(formattedSchool);
+			$(".education-entry:last").append(formattedTitle + formattedSchool);
 
 			var formattedDates = HTMLonlineDates.replace("%data%", educations["onlineCourse"][onlineCourse].dates);
 			$(".education-entry:last").append(formattedDates);
@@ -209,4 +215,3 @@ educations.display = function() {
 educations.display();
 
 $("#mapDiv").append(googleMap);
-// locations(work)

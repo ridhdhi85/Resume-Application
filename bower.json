@@ -1,0 +1,25 @@
+{
+  "name": "Resume-Application",
+  "homepage": "https://github.com/ridhdhi85/Resume-Application",
+  "authors": [
+    "Ridhdhi <Ridhdhisachu@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.2.0",
+    "iron-image": "PolymerElements/iron-image#^1.2.1"
+  },
+  "devDependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}
