@@ -7,9 +7,9 @@ var bio = {
 		"github": "ridhdhi85",
 		"twitter": "#RidhdhiP",
 		"linkedin": "https://www.linkedin.com/in/riddhipatel",
-		"location": "Oklahoma City",
+		"location": "Oklahoma City"
 	},
-	"bioURL": "images/pic.jpg",
+	"biopic": "images/pic.jpg",
 	"welcomeMessage": "I am working as SR Sofware engineer in Test and i am learning web-development to switch my career to development",
 	"skills": [
 		"Java", "Javascript", "Groovy", "web-development", "automation", "selenium", "Agile Methodologies", "Scrum", "Web services"
@@ -21,21 +21,21 @@ var work = {
 			"employer": "Netsuite inc",
 			"title": "Sr Software engineer in Test",
 			"location": "Oklahoma City, Oklahoma",
-			"dateWorked": "Feb 2015 - current",
+			"dates": "Feb 2015 - current",
 			"description": "Working as SET on Javascript, java and automation using selenium/java."
 		},
 		{
 			"employer": "Truecar inc",
 			"title": "Test automation engineer",
 			"location": "Los angeles, California",
-			"dateWorked": "May 2012 - Feb 2015",
+			"dates": "May 2012 - Feb 2015",
 			"description": "Worked on Python automation framework development"
 		},
 		{
 			"employer": "Yahoo inc",
 			"title": "Tech Yahoo Software Quality Engineer",
 			"location": "Carlsbad, California",
-			"dateWorked": "OCT 2011 - May 2012",
+			"dates": "OCT 2011 - May 2012",
 			"description": "Worked on Display advertising Platform Team as Quality Engineer."
 	}]
 };
@@ -46,7 +46,7 @@ var educations = {
 			"location": "Sanjose, California",
 			"degree": "Master in Software engineering",
 			"majors": ["Software engineering"],
-			"yearGraduated": "Dec 2008",
+			"dates": "Dec 2008",
 			"url": "http://www.sjsu.edu"
 		},
 		{
@@ -54,19 +54,19 @@ var educations = {
 			"location": "India",
 			"degree": "Bachelor in Computer engineering",
 			"majors": ["Computer engineering"],
-			"yearGraduated": "May 2006",
+			"dates": "May 2006",
 			"url": "http://www.ngu.ac.in"
 	}],
 	"onlineCourse": [{
 			"title": "Front-end Web development",
 			"school": "Udacity",
-			"dates": "2015-2016",
+			"date": "2015-2016",
 			"url": "https://www.udacity.com"
 		},
 		{
 			"title": "Introduction to Computer Science and Programming Using Python",
 			"school": "Edx",
-			"dates": "2012",
+			"date": "2012",
 			"url": "https://www.edx.org"
 	}]
 };
@@ -82,13 +82,13 @@ var projects = {
 			"title": "Online Resume project",
 			"dates": "Jan 2016",
 			"description": "Using Javascript, CSS, Html and Polymer",
-			"images": ["images/fry.jpg", "images/fry.jpg"]
+			"images": ["images/resume_footer_sm.jpg", "images/resume_intro_sm.jpg", "images/resume_responsive_sm.jpg"]
 	}]
 };
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioURL);
+var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
 var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 
 $("#header").prepend(formattedRole);
@@ -133,7 +133,7 @@ work.display = function() {
 		var formattedTitle =  HTMLworkTitle.replace("%data%", work["jobs"][job].title);
 		$(".work-entry:last").append(formattedEmployer + formattedTitle);
 
-		var formattedDate =  HTMLworkDates.replace("%data%", work["jobs"][job].dateWorked);
+		var formattedDate =  HTMLworkDates.replace("%data%", work["jobs"][job].dates);
 		$(".work-entry:last").append(formattedDate);
 
 		var formattedDescription =  HTMLworkDescription.replace("%data%", work["jobs"][job].description);
@@ -179,7 +179,7 @@ educations.display = function() {
 		var formattedLocation = HTMLschoolLocation.replace("%data%", educations["schools"][education].location);
 		$(".education-entry:last").append(formattedLocation);
 
-		var formattedYearsGraduated = HTMLschoolDates.replace("%data%", educations["schools"][education].yearGraduated);
+		var formattedYearsGraduated = HTMLschoolDates.replace("%data%", educations["schools"][education].dates);
 		$(".education-entry:last").append(formattedYearsGraduated);
 
 		// var formattedUrl = HTMLschoolLocation.replace("%data%", educations["schools"][education].url);
@@ -203,7 +203,7 @@ educations.display = function() {
 			var formattedSchool = HTMLonlineSchool.replace("%data%", educations["onlineCourse"][onlineCourse].school);
 			$(".education-entry:last").append(formattedTitle + formattedSchool);
 
-			var formattedDates = HTMLonlineDates.replace("%data%", educations["onlineCourse"][onlineCourse].dates);
+			var formattedDates = HTMLonlineDates.replace("%data%", educations["onlineCourse"][onlineCourse].date);
 			$(".education-entry:last").append(formattedDates);
 
 			var formattedUrl = HTMLonlineURL.replace("%data%", educations["onlineCourse"][onlineCourse].url);
