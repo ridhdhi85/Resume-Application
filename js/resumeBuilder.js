@@ -186,7 +186,7 @@ educations.display = function() {
 		var formattedYearsGraduated = HTMLschoolDates.replace("%data%", educations.schools[education].dates);
 		$(".education-entry:last").append(formattedYearsGraduated);
 
-		// var formattedUrl = HTMLschoolLocation.replace("%data%", educations.schools[education].url);
+		var formattedUrl = HTMLschoolLocation.replace("%data%", educations.schools[education].url);
 		// $(".education-entry:last").append(formattedUrl);
 
 		if (educations.schools[education].majors.length > 0) {
@@ -199,9 +199,10 @@ educations.display = function() {
 	}
 
 	if (educations.onlineCourse.length > 0) {
-		$(".education-entry:last").append(HTMLonlineClasses);
+		$("#education").append(HTMLonlineClasses);
 
 		for (var onlineCourse = 0; onlineCourse < educations.onlineCourse.length; onlineCourse++) {
+			$("#education").append(HTMLschoolStart);
 
 			var formattedTitle = HTMLonlineTitle.replace("%data%", educations.onlineCourse[onlineCourse].title);
 			var formattedSchool = HTMLonlineSchool.replace("%data%", educations.onlineCourse[onlineCourse].school);

@@ -60,8 +60,13 @@ h5 {
 
 }
 
+.row {
+	margin-bottom: 15px;
+}
+
 #no_indent {
 		padding: 10px 0;
+		text-align: center;
 }
 
 .date-text {
