@@ -2,8 +2,8 @@ var bio = {
 	"name": "Ridhdhi Patel",
 	"role": "Web Developer",
 	"contacts": {
-		"mobile": "408-802-3711",
-		"email": "Ridhdhi2285@gmail.com",
+		"mobile": "xxx-xxx-xxxx",
+		"email": "Ridhdhixx@gmail.com",
 		"github": "ridhdhi85",
 		"twitter": "#RidhdhiP",
 		"linkedin": "https://www.linkedin.com/in/riddhipatel",
