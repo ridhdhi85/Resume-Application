@@ -44,6 +44,10 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
   <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
   <script type="text/javascript" src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+  <link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=zocial"/>
+  <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+  <link rel="import" href="bower_components/iron-pages/iron-pages.html">
+  <link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html">
   <meta name="viewport" content="width=device-width">
 </head>
 <body>
@@ -58,11 +62,25 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     <div id="header" class="center-content clear-fix">
       <ul id="topContacts" class="flex-box"></ul>
     </div>
+    <paper-tabs selected="0" class="flex wrap">
+      <paper-tab><h3>Work Experience</h3></paper-tab>
+      <paper-tab><h3>Projects</h3></paper-tab>
+      <paper-tab><h3>Education</h3></paper-tab>
+      <paper-tab><h3>Where I've Lived and Worked</h3></paper-tab>
+    </paper-tabs>
+
+    <iron-pages selected="0" class="flex">
+      <div id="workExperience"></div>
+      <div id="projects"></div>
+      <div id="education"></div>
+      <div id="mapDiv"></div>
+    </iron-pages>
+
     <div style="clear: both;"></div>
-    <div id="workExperience" class="gray">
+    <!-- <div id="workExperience" class="gray">
       <h2>Work Experience</h2>
-    </div>
-    <div id="projects">
+    </div> -->
+    <!-- <div id="projects">
       <h2>Projects</h2>
     </div>
     <div id="education" class="gray">
@@ -70,11 +88,16 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     </div>
     <div id="mapDiv">
       <h2>Where I've Lived and Worked</h2>
-    </div>
+    </div> -->
     <div id="lets-connect" class="dark-gray">
-      <h2 class="orange center-text">Let's Connect</h2>
-        <ul id="footerContacts" class="flex-box">
-      </ul>
+      <h2 class="orange center-text">Let's Connect
+          <a href="https://twitter.com/RidhdhiP" class="zocial-twitter"></a>
+          <a href="https://github.com/ridhdhi85" class="zocial-github"></a>
+          <a href="408-802-3711" class="zocial-call"></a>
+          <a href="ridhdhi2285@gmail.com" class="zocial-email"></a>
+          <a href="https://www.linkedin.com/in/riddhipatel" class="zocial-linkedin"></a>
+      </h2>
+      <ul id="footerContacts" class="flex-box"></ul>
     </div>
   </div>
 
@@ -93,8 +116,13 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   of the resume, then that part of the resume does not show up. More on this in the
   course.
   -->
-
   <script type="text/javascript">
+    var pages = document.querySelector('iron-pages');
+     var tabs = document.querySelector('paper-tabs');
+
+    tabs.addEventListener('iron-select', function() { 
+        pages.selected = tabs.selected;
+    });
     // Notice how all of a sudden there's JavaScript inside this HTML
     // document? You can write JavaScript between <script> tags. At the end of your
     // JavaScript, don't forget the closing script tag with the slash (/).

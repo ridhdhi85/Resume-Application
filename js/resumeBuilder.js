@@ -76,7 +76,7 @@ var projects = {
 			"title": "Online portfolio project",
 			"dates": "Jan 2016",
 			"description": "Using HTML and CSS and Bootstrap",
-			"images": ["images/portfolio.jpg", "images/fry.jpg"]
+			"images": ["images/portfolio.jpg"]
 		},
 		{
 			"title": "Online Resume project",
