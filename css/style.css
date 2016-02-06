@@ -26,7 +26,7 @@ h6 {
 
 h1 {
 	font-size: 40px;
-	color: #f5a623;
+	color: #72AB00;
 	line-height: 48px;
 	display: inline;
 }
@@ -41,7 +41,7 @@ h2 {
 
 h3 {
 	font-size: 20px;
-	color: #f5ae23;
+	color: #72AB00;
 	line-height: 22px;
 }
 
@@ -88,7 +88,7 @@ p {
 }
 
 a {
-	color: #1199c3;
+	color: #1197c3;
 	text-decoration: none;
 	margin-top: 10px;
 	display: block;
@@ -103,16 +103,16 @@ a {
 }
 
 #skills-h3 {
-	color: #f5ae23;
+	color: #72AB00;
 	display: none;
 }
 
 .orange {
-	background-color: #f5ae23;
+	background-color: #666666;
 }
 
-.orange-text {
-	color: #f5ae23;
+.green-text {
+	color: #72AB00;
 }
 
 .white-text {
@@ -188,8 +188,8 @@ span {
 	background-color: #666666;
 }
 
-#selectionBar {
-	background-color: "white";
+#selectionBar.paper-tabs {
+	background-color: #1199C3;
 }
 
 #map {
@@ -238,7 +238,7 @@ span {
 @media only screen and (max-width: 650px) {
 	h3 {
 		font-size: 15px;
-		color: #f5ae23;
+		color: #72AB00;
 	}
 
 	#mapDiv {
@@ -251,12 +251,18 @@ span {
 @media only screen and (max-width: 450px) {
 	h3 {
 		font-size: 10px;
-		color: #f5ae23;
+		color: #72AB00;
 	}
 
 	#lets-connect {
 		margin-top: 15%;
 	}
+
+	/*#mapDiv {
+		height: 100px;
+		width: 100%;
+		padding-bottom: 1%;
+	}*/
 }
 
 @media only screen and (min-width: 750px) {
